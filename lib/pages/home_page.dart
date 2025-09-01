@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:responsive_ui_9/data/places.dart';
 import 'package:responsive_ui_9/model/place.dart';
+import 'package:responsive_ui_9/pages/details_page.dart';
 
 class HomePage extends StatefulWidget {
   final List<Place> places;
@@ -51,6 +52,10 @@ class _HomePageState extends State<HomePage> {
                     return GestureDetector(
                       onTap: () => setState(() {
                         _selectedPlace = place;
+                        if (!ResponsiveBreakpoints.of(context).isDesktop) {
+                          Navigator.of(context).push(MaterialPageRoute(
+                              builder: (ctx) => DetailsPage(place: place)));
+                        }
                       }),
                       child: Card(
                           child: Container(
