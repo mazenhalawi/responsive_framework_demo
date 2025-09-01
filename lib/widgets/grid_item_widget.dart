@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_ui_9/pages/details_page.dart';
 import '../model/place.dart';
-import '../pages/details_page.dart';
 import 'responsive_widget.dart';
 
 class GridItemWidget extends StatelessWidget {
